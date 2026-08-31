@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica MedCocal - Agendamentos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Clínica MedCocal</h1>
+        <nav>
+            <a href="index.html">Pacientes</a>
+            <a href="medicos.html">Médicos</a>
+            <a href="servicos.html">Serviços</a>
+            <a href="agendamentos.html" class="active">Agendamentos</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Novo Agendamento</h2>
+        <form id="formAgendamento">
+            <div class="form-group">
+                <label for="pacienteSelect">Paciente:</label>
+                <input type="text" id="pacienteSelect" required placeholder="Nome do paciente">
+            </div>
+
+            <div class="form-group">
+                <label for="medicoSelect">Médico:</label>
+                <select id="medicoSelect" required>
+                    <option value="">Selecione o médico</option>
+                    <option value="Dr. João Silva">Dr. João Silva (Cardiologia)</option>
+                    <option value="Dra. Maria Santos">Dra. Maria Santos (Pediatria)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="servicoSelect">Serviço:</label>
+                <select id="servicoSelect" required>
+                    <option value="">Selecione o serviço</option>
+                    <option value="Consulta">Consulta Presencial (R$ 150,00)</option>
+                    <option value="Exame de Sangue">Exame de Sangue (R$ 80,00)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dataHora">Data e Horário:</label>
+                <input type="datetime-local" id="dataHora" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Confirmar Agendamento</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
