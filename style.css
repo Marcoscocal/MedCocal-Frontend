@@ -76,3 +76,10 @@ h2 {
 .btn-submit:hover {
     background-color: #003d80;
 }
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica MedCocal - Cadastro de Médicos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Clínica MedCocal</h1>
+        <nav>
+            <a href="index.html">Pacientes</a>
+            <a href="medicos.html" class="active">Médicos</a>
+            <a href="#">Serviços</a>
+            <a href="#">Agendamentos</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Cadastro de Médico</h2>
+        <form id="formMedico">
+            <div class="form-group">
+                <label for="nomeMedico">Nome do Médico:</label>
+                <input type="text" id="nomeMedico" required placeholder="Dr. João Silva">
+            </div>
+
+            <div class="form-group">
+                <label for="crm">CRM:</label>
+                <input type="text" id="crm" required placeholder="12345/PI">
+            </div>
+
+            <div class="form-group">
+                <label for="especialidade">Especialidade:</label>
+                <select id="especialidade" required>
+                    <option value="">Selecione uma especialidade</option>
+                    <option value="Cardiologia">Cardiologia</option>
+                    <option value="Dermatologia">Dermatologia</option>
+                    <option value="Pediatria">Pediatria</option>
+                    <option value="Ortopedia">Ortopedia</option>
+                    <option value="Clínica Geral">Clínica Geral</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="emailMedico">E-mail Profissional:</label>
+                <input type="email" id="emailMedico" required placeholder="medico@medcocal.com">
+            </div>
+
+            <button type="submit" class="btn-submit">Cadastrar Médico</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
