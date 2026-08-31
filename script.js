@@ -1,22 +1,15 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f6f9;
-}
+document.getElementById('formPaciente').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const paciente = {
+        nome: document.getElementById('nome').value,
+        email: document.getElementById('email').value,
+        senha: document.getElementById('senha').value,
+        telefone: document.getElementById('telefone').value,
+        cpf: document.getElementById('cpf').value
+    };
 
-header {
-    background-color: #0056b3;
-    color: white;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav a {
-    color: white;
-    margin-left: 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
+    console.log("Dados do Paciente salvos:", paciente);
+    alert('Paciente cadastrado com sucesso!');
+    this.reset();
+});
