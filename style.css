@@ -83,3 +83,54 @@ h2 {
     border-radius: 4px;
     background-color: white;
 }
+/* Estilos específicos para a tela de Login */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f6f9;
+}
+
+.login-card {
+    background: white;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.login-header {
+    background-color: #1a66ff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.login-header h2 {
+    color: white;
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.login-form {
+    padding: 25px;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.login-footer a {
+    color: #1a66ff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
