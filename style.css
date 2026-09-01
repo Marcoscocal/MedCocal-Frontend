@@ -265,3 +265,22 @@ header {
 .login-footer a:hover {
     text-decoration: underline;
 }
+/* Dica visual para login de teste */
+.dica-teste {
+    font-size: 0.8rem;
+    color: #555;
+    background-color: #eef4ff;
+    border: 1px solid #cce0ff;
+    padding: 8px 10px;
+    border-radius: 6px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.dica-teste code {
+    background-color: #dbeafe;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #004085;
+}

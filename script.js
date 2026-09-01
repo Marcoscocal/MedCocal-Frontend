@@ -1,12 +1,24 @@
-// Proteção de Acesso: Executa ao carregar qualquer página
+// Garante que o usuário padrão de teste 'teste / 123' esteja sempre ativo
+(function garantirUsuarioTeste() {
+    const usuarioPadrao = {
+        nome: 'Usuário Teste',
+        email: 'teste',
+        cpf: '000.000.000-00',
+        celular: '(00) 00000-0000',
+        senha: '123'
+    };
+    
+    // Sempre define ou atualiza o usuarioPadrao de teste
+    localStorage.setItem('usuarioTestePadrao', JSON.stringify(usuarioPadrao));
+})();
+
+// Proteção de Acesso às rotas internas
 (function protegerRotas() {
     const usuarioLogado = localStorage.getItem('funcionarioLogado');
     const paginaAtual = window.location.pathname.split('/').pop();
 
-    // Páginas públicas (não precisam de login)
-    const paginasPublicas = ['login.html', 'cadastro.html'];
+    const paginasPublicas = ['login.html', 'cadastro.html', ''];
 
-    // Se NÃO estiver logado e tentar acessar qualquer página do sistema (incluindo index.html)
     if (!usuarioLogado && !paginasPublicas.includes(paginaAtual)) {
         window.location.href = 'login.html';
     }
@@ -46,22 +58,27 @@ if (formLogin) {
     formLogin.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        const emailDigitado = document.getElementById('loginEmail').value;
-        const senhaDigitada = document.getElementById('loginSenha').value;
+        const emailDigitado = document.getElementById('loginEmail').value.trim();
+        const senhaDigitada = document.getElementById('loginSenha').value.trim();
 
+        // Busca tanto o usuário de teste padrão quanto eventuais cadastros manuais
+        const usuarioPadrao = JSON.parse(localStorage.getItem('usuarioTestePadrao'));
         const funcionarioCadastrado = JSON.parse(localStorage.getItem('funcionarioCadastrado'));
 
-        if (funcionarioCadastrado && funcionarioCadastrado.email === emailDigitado && funcionarioCadastrado.senha === senhaDigitada) {
+        const ehUsuarioPadraoValido = usuarioPadrao && usuarioPadrao.email === emailDigitado && usuarioPadrao.senha === senhaDigitada;
+        const ehUsuarioCadastradoValido = funcionarioCadastrado && funcionarioCadastrado.email === emailDigitado && funcionarioCadastrado.senha === senhaDigitada;
+
+        if (ehUsuarioPadraoValido || ehUsuarioCadastradoValido) {
             localStorage.setItem('funcionarioLogado', 'true');
             alert('Login realizado com sucesso!');
-            window.location.href = 'index.html'; // Entra no sistema após logar
+            window.location.href = 'index.html';
         } else {
             alert('E-mail ou senha incorretos!');
         }
     });
 }
 
-// 3. Funçao de Logout (Sair)
+// 3. Função de Logout (Sair)
 function fazerLogout() {
     localStorage.removeItem('funcionarioLogado');
     alert('Sessão encerrada com sucesso!');
