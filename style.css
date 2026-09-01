@@ -134,3 +134,134 @@ h2 {
 .login-footer a:hover {
     text-decoration: underline;
 }
+/* Ajustes do Logotipo no Cabeçalho */
+/* Ajuste de tamanho e alinhamento do cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: #0056b3; /* Cor do fundo azul */
+}
+
+.logo-img {
+    height: 60px; /* Reduz a altura para caber perfeitamente */
+    width: auto;  /* Mantém a proporção da imagem */
+    display: block;
+}
+/* Alinhamento do logotipo lado a lado com o título no Login */
+.login-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px; /* Espaço entre o logotipo e o texto */
+    padding: 20px;
+    background-color: #0056b3;
+    color: white;
+}
+
+.logo-login {
+    height: 45px; /* Tamanho proporcional do logotipo */
+    width: auto;
+    display: block;
+}
+/* ==========================================
+   CORREÇÃO DA TELA DE LOGIN (Cole no final do arquivo)
+   ========================================== */
+
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f6f9;
+    margin: 0;
+}
+
+.login-card {
+    background: white;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.login-header {
+    background-color: #0056b3;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.login-header h2 {
+    color: white;
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.logo-login {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.login-form {
+    padding: 25px;
+}
+
+.login-form .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #004085;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.login-footer a {
+    color: #0056b3;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
